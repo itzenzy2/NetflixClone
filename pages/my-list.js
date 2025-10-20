@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Header from '../components/Header';
 import MovieCard from '../components/MovieCard';
 import ContentModal from '../components/ContentModal';
@@ -92,12 +93,12 @@ export default function MyListPage() {
               <p className="text-gray-400 mb-6 max-w-md">
                 Browse movies and TV shows and add them to your list to watch later.
               </p>
-              <a
+              <Link
                 href="/"
-                className="px-6 py-3 bg-white text-black rounded font-semibold hover:bg-gray-200 transition"
+                className="px-6 py-3 bg-white text-black rounded font-semibold hover:bg-gray-200 transition inline-block"
               >
                 Browse Content
-              </a>
+              </Link>
             </div>
           ) : (
             /* Grid of Content */
