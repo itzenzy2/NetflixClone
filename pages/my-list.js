@@ -47,17 +47,21 @@ export default function MyListPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <div className="min-h-screen bg-netflix-black">
+      <div className="relative isolate min-h-screen overflow-hidden bg-netflix-black">
+        <div className="pointer-events-none absolute left-[-10%] top-0 h-96 w-96 rounded-full bg-netflix-red/10 blur-3xl animate-float" />
+        <div className="pointer-events-none absolute right-[-8%] bottom-[10%] h-[28rem] w-[28rem] rounded-full bg-white/5 blur-3xl animate-float [animation-delay:1.3s]" />
+
         {/* Header */}
         <Header />
 
         {/* Main Content */}
-        <div className="pt-20 md:pt-24 px-4 md:px-8 lg:px-16 pb-20">
+        <div className="section-shell relative z-10 pt-28 pb-20 md:pt-32">
           {/* Page Title */}
-          <div className="mb-8 flex items-center justify-between">
+          <div className="glass-panel mb-8 flex flex-col gap-4 rounded-[2rem] p-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">My List</h1>
-              <p className="text-gray-400">
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Personal shelf</p>
+              <h1 className="font-display mb-2 text-3xl font-semibold md:text-5xl">My List</h1>
+              <p className="text-white/55">
                 {myList.length} {myList.length === 1 ? 'title' : 'titles'}
               </p>
             </div>
@@ -66,7 +70,7 @@ export default function MyListPage() {
             {myList.length > 0 && (
               <button
                 onClick={() => setShowClearConfirm(true)}
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm transition"
+                className="rounded-full border border-white/10 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/15"
               >
                 Clear All
               </button>
@@ -75,9 +79,9 @@ export default function MyListPage() {
 
           {/* Empty State */}
           {myList.length === 0 ? (
-            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
+            <div className="glass-panel flex min-h-[60vh] flex-col items-center justify-center rounded-[2rem] text-center">
               <svg
-                className="w-24 h-24 text-gray-600 mb-6"
+                className="mb-6 h-24 w-24 text-white/20"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -89,20 +93,20 @@ export default function MyListPage() {
                   d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
                 />
               </svg>
-              <h2 className="text-2xl font-semibold mb-2">Your list is empty</h2>
-              <p className="text-gray-400 mb-6 max-w-md">
+              <h2 className="font-display mb-2 text-2xl font-semibold md:text-3xl">Your list is empty</h2>
+              <p className="mb-6 max-w-md text-white/55">
                 Browse movies and TV shows and add them to your list to watch later.
               </p>
               <Link
                 href="/"
-                className="px-6 py-3 bg-white text-black rounded font-semibold hover:bg-gray-200 transition inline-block"
+                className="inline-block rounded-full bg-white px-6 py-3 font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
               >
                 Browse Content
               </Link>
             </div>
           ) : (
             /* Grid of Content */
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
               {myList.map((item) => (
                 <MovieCard
                   key={`${item.id}-${item.media_type}`}
@@ -125,27 +129,27 @@ export default function MyListPage() {
         {/* Clear Confirmation Modal */}
         {showClearConfirm && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-xl"
             onClick={() => setShowClearConfirm(false)}
           >
             <div
-              className="bg-netflix-darkGray rounded-lg max-w-md w-full p-6"
+              className="glass-panel w-full max-w-md rounded-3xl p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-2xl font-bold mb-4">Clear My List?</h2>
-              <p className="text-gray-300 mb-6">
+              <h2 className="font-display mb-4 text-2xl font-semibold">Clear My List?</h2>
+              <p className="mb-6 text-white/65">
                 Are you sure you want to remove all items from your list? This action cannot be undone.
               </p>
               <div className="flex space-x-3">
                 <button
                   onClick={handleClearList}
-                  className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded font-semibold transition"
+                  className="flex-1 rounded-full bg-red-600 px-4 py-2.5 font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-red-500"
                 >
                   Clear All
                 </button>
                 <button
                   onClick={() => setShowClearConfirm(false)}
-                  className="flex-1 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded font-semibold transition"
+                  className="flex-1 rounded-full border border-white/10 bg-white/10 px-4 py-2.5 font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/15"
                 >
                   Cancel
                 </button>

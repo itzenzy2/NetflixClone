@@ -116,7 +116,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="relative min-h-screen bg-netflix-black">
+      <div className="relative isolate min-h-screen overflow-hidden bg-netflix-black">
+        <div className="pointer-events-none absolute left-[-8%] top-[-4%] h-80 w-80 rounded-full bg-netflix-red/15 blur-3xl animate-float" />
+        <div className="pointer-events-none absolute right-[-6%] top-[18%] h-96 w-96 rounded-full bg-white/5 blur-3xl animate-float [animation-delay:1.4s]" />
+
         {/* Header */}
         <Header />
 
@@ -129,7 +132,7 @@ export default function Home() {
         )}
 
         {/* Content Rows */}
-        <div className="relative pb-20 space-y-8 md:space-y-12 -mt-20 md:-mt-32 lg:-mt-40 z-10">
+        <div className="relative z-10 -mt-24 space-y-10 pb-24 md:-mt-36 md:space-y-14 lg:-mt-44">
           {/* My List - Only show if user has items in their list */}
           {myList.length > 0 && (
             <CarouselRow
@@ -213,8 +216,10 @@ export default function Home() {
 
         {/* Loading State */}
         {loading && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-            <div className="text-white text-2xl">Loading...</div>
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-xl">
+            <div className="glass-panel rounded-3xl px-6 py-4 text-white">
+              Loading...
+            </div>
           </div>
         )}
       </div>

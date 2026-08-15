@@ -1,12 +1,8 @@
 /**
  * Video Player Page
- * 
+ *
  * Full-screen video player using VidKing embedded iframe.
  * Supports both movies and TV shows with season/episode parameters.
- * 
- * Routes:
- * - /watch/movie/[id] for movies
- * - /watch/tv/[id]?season=1&episode=1 for TV shows
  */
 
 import { useRouter } from 'next/router';
@@ -22,22 +18,18 @@ export default function WatchPage() {
 
   useEffect(() => {
     if (type && id) {
-      // Build the VidKing embed URL
       let url = '';
 
       if (type === 'movie') {
-        // Movie URL: https://www.vidking.net/embed/movie/{tmdbId}
         url = `https://www.vidking.net/embed/movie/${id}`;
       } else if (type === 'tv') {
-        // TV Show URL: https://www.vidking.net/embed/tv/{tmdbId}/{season}/{episode}
         const season = router.query.season || '1';
         const episode = router.query.episode || '1';
         url = `https://www.vidking.net/embed/tv/${id}/${season}/${episode}`;
       }
 
-      // Add customization parameters
       const params = new URLSearchParams({
-        color: 'E50914', // Netflix red
+        color: 'E50914',
         autoPlay: 'true',
       });
 
@@ -45,7 +37,6 @@ export default function WatchPage() {
     }
   }, [type, id, router.query.season, router.query.episode]);
 
-  // Handle escape key to exit fullscreen
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && isFullscreen) {
@@ -63,7 +54,7 @@ export default function WatchPage() {
 
   const toggleFullscreen = () => {
     const elem = document.getElementById('video-player');
-    
+
     if (!isFullscreen) {
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
@@ -87,8 +78,8 @@ export default function WatchPage() {
 
   if (!iframeUrl) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-black">
-        <div className="text-white text-xl">Loading player...</div>
+      <div className="flex min-h-screen items-center justify-center bg-black">
+        <div className="glass-panel rounded-3xl px-6 py-4 text-white">Loading player...</div>
       </div>
     );
   }
@@ -100,19 +91,16 @@ export default function WatchPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <div className="relative min-h-screen bg-black">
-        {/* Back button - Fixed position */}
-        <div className="fixed top-4 left-4 z-50">
+      <div className="relative isolate min-h-screen overflow-hidden bg-black">
+        <div className="pointer-events-none absolute left-[-10%] top-[-10%] h-96 w-96 rounded-full bg-netflix-red/10 blur-3xl" />
+        <div className="pointer-events-none absolute right-[-8%] bottom-[-10%] h-[28rem] w-[28rem] rounded-full bg-white/5 blur-3xl" />
+
+        <div className="fixed left-3 top-3 z-50 sm:left-4 sm:top-4">
           <button
             onClick={handleGoBack}
-            className="flex items-center space-x-2 bg-black/70 hover:bg-black/90 text-white px-4 py-2 rounded-full transition backdrop-blur-sm"
+            className="flex items-center gap-2 rounded-full border border-white/10 bg-black/55 px-3 py-2 text-white shadow-xl shadow-black/30 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:bg-black/75 sm:px-4"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -124,34 +112,32 @@ export default function WatchPage() {
           </button>
         </div>
 
-        {/* Fullscreen toggle button */}
-        <div className="fixed top-4 right-4 z-50">
+        <div className="fixed right-3 top-3 z-50 sm:right-4 sm:top-4">
           <button
             onClick={toggleFullscreen}
-            className="flex items-center space-x-2 bg-black/70 hover:bg-black/90 text-white px-4 py-2 rounded-full transition backdrop-blur-sm"
+            className="flex items-center gap-2 rounded-full border border-white/10 bg-black/55 px-3 py-2 text-white shadow-xl shadow-black/30 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:bg-black/75 sm:px-4"
             title={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
           >
             {isFullscreen ? (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
               </svg>
             )}
           </button>
         </div>
 
-        {/* Video Player Container */}
         <div
           id="video-player"
-          className="flex items-center justify-center min-h-screen w-full p-0 md:p-8"
+          className="flex min-h-screen w-full items-center justify-center p-0 md:p-8"
         >
-          <div className="w-full h-screen md:h-[80vh] md:max-w-7xl">
+          <div className="glass-panel h-[62svh] w-full md:h-[82vh] md:max-w-7xl md:rounded-[2rem]">
             <iframe
               src={iframeUrl}
-              className="w-full h-full rounded-none md:rounded-lg"
+              className="h-full w-full rounded-none md:rounded-[2rem]"
               frameBorder="0"
               allowFullScreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -160,27 +146,20 @@ export default function WatchPage() {
           </div>
         </div>
 
-        {/* Info section below player */}
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="bg-netflix-darkGray rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-2">Player Information</h2>
-            <p className="text-gray-400 text-sm mb-4">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:py-8 md:px-8">
+          <div className="glass-panel rounded-[1.5rem] p-4 sm:rounded-[2rem] sm:p-6">
+            <h2 className="font-display mb-2 text-lg font-semibold sm:text-xl">Player Information</h2>
+            <p className="mb-4 text-sm leading-6 text-white/55">
               You are watching {type === 'movie' ? 'a movie' : 'a TV show'}
               {type === 'tv' && router.query.season && router.query.episode && (
                 <> - Season {router.query.season}, Episode {router.query.episode}</>
               )}
             </p>
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/"
-                className="text-netflix-red hover:underline text-sm"
-              >
+            <div className="flex flex-wrap items-center gap-4">
+              <Link href="/" className="text-sm text-netflix-red transition hover:text-red-400 hover:underline">
                 ← Back to Home
               </Link>
-              <Link
-                href="/my-list"
-                className="text-netflix-red hover:underline text-sm"
-              >
+              <Link href="/my-list" className="text-sm text-netflix-red transition hover:text-red-400 hover:underline">
                 Go to My List →
               </Link>
             </div>
