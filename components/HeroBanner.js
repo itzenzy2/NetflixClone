@@ -1,11 +1,11 @@
 /**
  * Hero Banner Component
- *
+ * 
  * Large featured content banner at the top of the homepage.
  * Displays a random trending movie/show with play and info buttons.
  */
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { getBackdropUrl } from '../lib/tmdb';
@@ -40,104 +40,124 @@ export default function HeroBanner({ content, onInfoClick }) {
   };
 
   return (
-    <div className="relative isolate h-[82svh] min-h-[560px] w-full overflow-hidden sm:h-[86vh] sm:min-h-[620px] lg:h-[88vh] lg:min-h-[680px]">
+    <div className="relative h-[56vw] lg:h-[80vh] w-full">
+      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src={backdropUrl}
           alt={title}
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/65 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-netflix-black via-black/20 to-transparent" />
-        <div className="absolute left-[-10%] top-[-5%] h-72 w-72 rounded-full bg-netflix-red/20 blur-3xl animate-float" />
-        <div className="absolute right-[-8%] top-[18%] h-80 w-80 rounded-full bg-white/10 blur-3xl animate-float [animation-delay:1.2s]" />
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-netflix-black via-transparent to-transparent" />
       </div>
 
-      <div className="section-shell relative flex h-full flex-col justify-end pb-16 pt-24 sm:pb-20 sm:pt-28 md:pb-24 lg:pt-32">
-        <div className="max-w-3xl space-y-4 sm:space-y-5 md:space-y-6 animate-fade-up">
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70 backdrop-blur-xl">
-            Featured Now
-          </div>
+      {/* Content */}
+      <div className="relative h-full flex flex-col justify-center px-4 md:px-8 lg:px-16 space-y-4 md:space-y-6 max-w-2xl">
+        {/* Title */}
+        <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold drop-shadow-xl">
+          {title}
+        </h1>
 
-          <h1 className="font-display text-3xl font-semibold leading-[0.95] text-white drop-shadow-2xl sm:text-4xl md:text-6xl lg:text-7xl">
-            {title}
-          </h1>
+        {/* Overview */}
+        {content.overview && (
+          <p className="text-sm md:text-base lg:text-lg line-clamp-3 md:line-clamp-4 drop-shadow-xl">
+            {content.overview}
+          </p>
+        )}
 
-          {content.overview && (
-            <p className="max-w-2xl text-sm leading-6 text-white/80 drop-shadow-xl sm:leading-7 md:text-base lg:text-lg">
-              {content.overview}
-            </p>
+        {/* Stats */}
+        <div className="flex items-center space-x-4 text-sm md:text-base">
+          {content.vote_average > 0 && (
+            <div className="flex items-center space-x-1">
+              <span className="text-yellow-400">⭐</span>
+              <span className="font-semibold">{content.vote_average.toFixed(1)}</span>
+            </div>
           )}
+          {content.release_date && (
+            <span className="text-netflix-lightGray">
+              {new Date(content.release_date).getFullYear()}
+            </span>
+          )}
+          {content.first_air_date && (
+            <span className="text-netflix-lightGray">
+              {new Date(content.first_air_date).getFullYear()}
+            </span>
+          )}
+        </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-xs sm:gap-3 sm:text-sm md:text-base">
-            {content.vote_average > 0 && (
-              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-white/90 backdrop-blur-xl">
-                <span className="text-yellow-400">★</span>
-                <span className="font-semibold">{content.vote_average.toFixed(1)}</span>
-              </div>
-            )}
-            {content.release_date && (
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-white/70 backdrop-blur-xl">
-                {new Date(content.release_date).getFullYear()}
-              </span>
-            )}
-            {content.first_air_date && (
-              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-white/70 backdrop-blur-xl">
-                {new Date(content.first_air_date).getFullYear()}
-              </span>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center">
-            <button
-              onClick={handlePlay}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-black shadow-xl shadow-black/30 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90 hover:shadow-2xl sm:w-auto"
+        {/* Action Buttons */}
+        <div className="flex items-center space-x-3">
+          {/* Play Button */}
+          <button
+            onClick={handlePlay}
+            className="flex items-center space-x-2 bg-white text-black px-6 md:px-8 py-2 md:py-3 rounded font-semibold hover:bg-white/80 transition"
+          >
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
             >
-              <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <span className="text-sm md:text-base">Play</span>
+          </button>
+
+          {/* More Info Button */}
+          <button
+            onClick={() => onInfoClick(content)}
+            className="flex items-center space-x-2 bg-gray-500/70 text-white px-6 md:px-8 py-2 md:py-3 rounded font-semibold hover:bg-gray-500/50 transition"
+          >
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span className="text-sm md:text-base">More Info</span>
+          </button>
+
+          {/* My List Button */}
+          <button
+            onClick={handleMyListToggle}
+            className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-transparent border-2 border-gray-400 text-white rounded-full hover:border-white hover:bg-gray-700/50 transition"
+            title={inList ? 'Remove from My List' : 'Add to My List'}
+          >
+            {inList ? (
+              <svg
+                className="w-5 h-5 md:w-6 md:h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
               </svg>
-              <span className="text-sm sm:text-base">Play</span>
-            </button>
-
-            <button
-              onClick={() => onInfoClick(content)}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:bg-white/15 sm:w-auto"
-            >
-              <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            ) : (
+              <svg
+                className="w-5 h-5 md:w-6 md:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d="M12 4v16m8-8H4"
                 />
               </svg>
-              <span className="text-sm sm:text-base">More Info</span>
-            </button>
-
-            <button
-              onClick={handleMyListToggle}
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10"
-              title={inList ? 'Remove from My List' : 'Add to My List'}
-            >
-              {inList ? (
-                <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                </svg>
-              ) : (
-                <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 4v16m8-8H4"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
+            )}
+          </button>
         </div>
       </div>
     </div>
