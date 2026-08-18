@@ -3,50 +3,32 @@
 > next dev
 
   ▲ Next.js 14.2.5
-  - Local:        http://localhost:10632
+  - Local:        http://localhost:2899
   - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 1405ms
- ○ Compiling /watch/[type]/[id] ...
- ✓ Compiled /watch/[type]/[id] in 2.3s (350 modules)
- ✓ Compiled in 143ms (350 modules)
- GET /watch/tv/155137?season=1&episode=1 200 in 2745ms
- GET /watch/movie/155 200 in 8ms
- ✓ Compiled / in 303ms (390 modules)
- GET / 200 in 625ms
- GET / 200 in 9ms
- GET / 200 in 13ms
- GET / 200 in 142ms
- ✓ Compiled /title/[id] in 220ms (394 modules)
- GET / 200 in 61ms
- ✓ Compiled /browse in 370ms (396 modules)
- ✓ Compiled in 277ms (392 modules)
- GET / 200 in 44ms
+ ✓ Ready in 1562ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.7s (393 modules)
+ ✓ Compiled in 157ms (393 modules)
+ GET / 200 in 3169ms
+ GET / 200 in 15ms
  GET / 200 in 10ms
- ✓ Compiled /watch/[type]/[id] in 149ms (394 modules)
- GET /watch/movie/839033 200 in 172ms
- GET /watch/movie/839033 200 in 7ms
- GET /watch/tv/1396?season=1&episode=1 200 in 9ms
- GET /watch/movie/839033 200 in 8ms
- ✓ Compiled /404 in 194ms (398 modules)
- GET /_next/static/chunks/pages/browse.js 404 in 238ms
- ✓ Compiled /_error in 90ms (400 modules)
- GET /browse 500 in 239ms
+ GET / 200 in 14ms
+ GET / 200 in 13ms
+ ✓ Compiled /title/[id] in 199ms (397 modules)
  GET / 200 in 24ms
- GET /_next/static/chunks/pages/browse.js 404 in 11ms
- GET /browse 500 in 11ms
- GET / 200 in 17ms
- GET /_next/static/chunks/pages/browse.js 404 in 10ms
- GET /browse 500 in 11ms
+ GET / 200 in 86ms
+ GET /title/969681?type=movie 200 in 19ms
+ GET /title/1375646?type=movie 200 in 11ms
+ GET / 200 in 10ms
+ GET / 200 in 10ms
  GET / 200 in 12ms
- ✓ Compiled /my-list in 312ms (404 modules)
- GET /_next/static/chunks/pages/browse.js 404 in 32ms
- GET /browse 500 in 17ms
- GET /browse 500 in 12ms
- ✓ Compiled in 254ms (400 modules)
- GET /browse 500 in 23ms
- GET /browse 500 in 10ms
- GET /browse 500 in 9ms
- GET /browse 500 in 10ms
+ ✓ Compiled in 313ms (397 modules)
+ ✓ Compiled in 174ms (397 modules)
+ GET / 200 in 68ms
+ ✓ Compiled in 310ms (397 modules)
+ ✓ Compiled in 739ms (397 modules)
+ ✓ Compiled in 753ms (397 modules)
+ ✓ Compiled in 396ms (397 modules)
 [?25h

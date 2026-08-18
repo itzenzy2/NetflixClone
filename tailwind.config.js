@@ -10,17 +10,25 @@ module.exports = {
       colors: {
         batflix: {
           red: '#E50914',
-          black: '#0B0B0E',
-          darkGray: '#17171C',
-          lightGray: '#A3A3AD',
-        }
+          redBright: '#FF2D3A',
+          black: '#000000',
+          ink: '#000000',
+          darkGray: '#131318',
+          surface: '#1A1A21',
+          surface2: '#23232C',
+          lightGray: '#A7A7B2',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       boxShadow: {
-        'soft': '0 8px 30px rgba(0, 0, 0, 0.35)',
-        'card': '0 4px 24px rgba(0, 0, 0, 0.5)',
+        'soft': '0 8px 30px rgba(0, 0, 0, 0.45)',
+        'card': '0 4px 24px rgba(0, 0, 0, 0.6)',
+        'card-hover': '0 24px 60px -16px rgba(0, 0, 0, 0.85)',
+        'glow-red': '0 0 40px -8px rgba(229, 9, 20, 0.65)',
+        'glow-soft': '0 0 90px -20px rgba(229, 9, 20, 0.4)',
       },
     },
   },

@@ -6,7 +6,7 @@
   html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: #3f3f46 #0b0b0c;
+    scrollbar-color: #2a2a33 #000000;
     color-scheme: dark;
     /* Keep horizontal scrolling confined to carousels */
     overscroll-behavior-x: none;
@@ -39,34 +39,36 @@
   }
 
   ::selection {
-    background: rgba(229, 9, 20, 0.45);
+    background: rgba(229, 9, 20, 0.5);
     color: #fff;
   }
 
   /* Slim, theme-matched scrollbars (WebKit) */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #0b0b0e;
+    background: #000000;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #3f3f46;
+    background: #2a2a33;
     border-radius: 9999px;
-    border: 2px solid #0b0b0c;
+    border: 2px solid #000000;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #52525b;
+    background: #e50914;
   }
 
-  /* Visible keyboard focus without double outlines on inputs */
+  /* Visible keyboard focus: brand red instead of the default gray ring */
   a:focus-visible,
-  button:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.75);
+  button:focus-visible,
+  [role='button']:focus-visible,
+  select:focus-visible {
+    outline: 2px solid rgba(229, 9, 20, 0.85);
     outline-offset: 2px;
   }
 
@@ -75,6 +77,89 @@
     button,
     select {
       touch-action: manipulation;
+    }
+  }
+}
+
+@layer components {
+  /* iOS 26-style liquid glass navbar.
+     All the paint lives on a ::before backdrop layer. A crisp 1px top rim
+     light gives the raised-glass feel, and the bottom edge dissolves away
+     through an eased mask so content melts under the bar instead of hitting
+     a straight line. The scroll-aware separation lives on a separate ::after
+     layer (unmasked) so the shadow renders in full below the bar. */
+  .nav-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: rgba(16, 16, 22, 0.5);
+    /* Refractive sheen: faint top-light easing into a soft bottom shade */
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0) 42%,
+      rgba(0, 0, 0, 0.12)
+    );
+    /* Raised-glass rim: a crisp 1px top light */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    backdrop-filter: blur(12px) saturate(160%);
+    /* Dissolve the glass toward the bottom with an eased fade so the blur
+       and tint reach zero exactly at the edge — no visible seam, no line. */
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      #000 0%,
+      #000 45%,
+      rgba(0, 0, 0, 0.55) 65%,
+      rgba(0, 0, 0, 0.25) 82%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      #000 0%,
+      #000 45%,
+      rgba(0, 0, 0, 0.55) 65%,
+      rgba(0, 0, 0, 0.25) 82%,
+      transparent 100%
+    );
+    transition: background-color 0.3s ease;
+  }
+
+  /* Slightly deepen the glass once content scrolls under it */
+  .nav-glass--scrolled::before {
+    background-color: rgba(12, 12, 17, 0.74);
+  }
+
+  /* Soft scroll-aware shadow beneath the bar. A separate unmasked layer so
+     it never gets cut off by the glass fade — a gradient that blends out
+     downward instead of ending in a line. */
+  .nav-glass::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 28px;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-glass--scrolled::after {
+    opacity: 1;
+  }
+
+  /* Fallback for browsers without backdrop-filter support */
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .nav-glass::before {
+      background-color: rgba(12, 12, 17, 0.9);
+    }
+
+    .nav-glass--scrolled::before {
+      background-color: rgba(12, 12, 17, 0.96);
     }
   }
 }
@@ -103,10 +188,62 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Frosted-glass surface used across cards, nav, and modals */
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* White headline that fades toward its baseline */
+  .text-gradient {
+    background: linear-gradient(180deg, #ffffff 24%, rgba(255, 255, 255, 0.55));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Red-tinted headline accent */
+  .text-gradient-red {
+    background: linear-gradient(120deg, #ff5b64 0%, #e50914 45%, #b0070f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Ambient cinematic glow field (place behind hero sections) */
+  .bg-aurora {
+    background:
+      radial-gradient(60% 55% at 18% -10%, rgba(229, 9, 20, 0.2), transparent 62%),
+      radial-gradient(45% 45% at 88% 8%, rgba(110, 55, 255, 0.14), transparent 60%),
+      radial-gradient(70% 60% at 50% 115%, rgba(229, 9, 20, 0.08), transparent 65%);
+  }
+
+  /* Light sweep that runs across a card when its group is hovered */
+  .card-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, 0.08) 50%, transparent 58%);
+    transform: translateX(-130%);
+    pointer-events: none;
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .group:hover .card-shine::after {
+    transform: translateX(130%);
   }
 
   /* Simple brand spinner used by loading states */
@@ -118,7 +255,7 @@
   .shimmer {
     position: relative;
     overflow: hidden;
-    background: #1e1e24;
+    background: #1c1c23;
   }
 
   .shimmer::after {
@@ -190,6 +327,122 @@
   }
 }
 
+/* ------------------------------------------------------------------ */
+/* Cinematic motion layer                                              */
+/* ------------------------------------------------------------------ */
+
+/* Filmic grain: a fixed, animated noise texture over the whole app.
+   The layer is oversized and only transform-animated (composited), so the
+   per-frame cost stays tiny. The low opacity + screen-like blend keeps it
+   from ever dulling text. */
+.grain-overlay {
+  position: fixed;
+  inset: -100%;
+  width: 300%;
+  height: 300%;
+  z-index: 100;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  animation: grainShift 8s steps(10) infinite;
+  will-change: transform;
+}
+
+@keyframes grainShift {
+  0% { transform: translate3d(0, 0, 0); }
+  10% { transform: translate3d(-2%, -3%, 0); }
+  20% { transform: translate3d(3%, -1%, 0); }
+  30% { transform: translate3d(-1%, 2%, 0); }
+  40% { transform: translate3d(2%, 3%, 0); }
+  50% { transform: translate3d(-3%, 1%, 0); }
+  60% { transform: translate3d(1%, -2%, 0); }
+  70% { transform: translate3d(3%, 2%, 0); }
+  80% { transform: translate3d(-2%, -1%, 0); }
+  90% { transform: translate3d(1%, 3%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Slow-drifting gradient mesh layered over the static aurora field.
+   Pure transform animation on a composited layer — no blur filters, so it
+   stays cheap even on the low-power devices where it matters. */
+.bg-aurora::before {
+  content: '';
+  position: absolute;
+  inset: -14%;
+  background:
+    radial-gradient(34% 40% at 24% 26%, rgba(229, 9, 20, 0.16), transparent 62%),
+    radial-gradient(26% 30% at 78% 16%, rgba(110, 55, 255, 0.14), transparent 60%),
+    radial-gradient(40% 44% at 64% 88%, rgba(229, 9, 20, 0.1), transparent 65%),
+    radial-gradient(22% 26% at 10% 78%, rgba(0, 168, 255, 0.1), transparent 60%);
+  animation: meshDrift 28s ease-in-out infinite alternate;
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes meshDrift {
+  from { transform: translate3d(-2.5%, -2%, 0) rotate(-1.5deg) scale(1.05); }
+  to { transform: translate3d(2.5%, 2%, 0) rotate(1.5deg) scale(1.12); }
+}
+
+/* Bat-signal searchlight behind the wordmark: a warm radial glow that
+   pulses, plus a thin beam that sweeps side to side like a spotlight.
+   Both layers are transform/opacity-only, so the motion is compositor cheap. */
+.bat-signal {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  z-index: -1;
+  width: 7em;
+  height: 7em;
+  margin-left: -3.5em;
+  margin-top: -3.5em;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.bat-signal-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 199, 94, 0.5) 0%, rgba(255, 160, 46, 0.2) 36%, transparent 70%);
+  filter: blur(3px);
+  animation: signalPulse 4.5s ease-in-out infinite;
+}
+
+.bat-signal-beam {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8em;
+  height: 8em;
+  margin-left: -4em;
+  margin-top: -4em;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from -14deg,
+    rgba(255, 208, 116, 0.18) 0deg,
+    rgba(255, 208, 116, 0.04) 12deg,
+    transparent 26deg,
+    transparent 334deg,
+    rgba(255, 208, 116, 0.04) 348deg,
+    rgba(255, 208, 116, 0.18) 360deg
+  );
+  mix-blend-mode: screen;
+  animation: signalSweep 7s ease-in-out infinite;
+}
+
+@keyframes signalPulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.95); }
+  50% { opacity: 0.95; transform: scale(1.04); }
+}
+
+@keyframes signalSweep {
+  0%, 100% { transform: rotate(-36deg) scale(0.9); opacity: 0.45; }
+  50% { transform: rotate(36deg) scale(1.08); opacity: 0.85; }
+}
+
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -199,5 +452,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .grain-overlay {
+    animation: none;
   }
 }

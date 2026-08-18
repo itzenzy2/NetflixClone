@@ -82,7 +82,7 @@ export default function BottomNav() {
     <>
       <nav
         aria-label="Primary"
-        className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-batflix-black/90 backdrop-blur-xl border-t border-black/50 safe-bottom"
+        className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-batflix-black/85 backdrop-blur-xl border-t border-white/10 safe-bottom"
       >
         <div className="grid grid-cols-4 max-w-md mx-auto">
           {TABS.map((tab) => {
@@ -92,9 +92,15 @@ export default function BottomNav() {
                 key={tab.href}
                 href={tab.href}
                 aria-current={active ? 'page' : undefined}
-                className="flex flex-col items-center justify-center gap-0.5 pt-2.5 pb-1.5 active:scale-95 transition-transform"
+                className="flex flex-col items-center justify-center gap-1 pt-2 pb-1.5 active:scale-95 transition-transform"
               >
-                <span className={active ? 'text-batflix-red' : 'text-gray-500'}>
+                <span
+                  className={`flex items-center justify-center w-10 h-7 rounded-full transition-colors ${
+                    active
+                      ? 'bg-batflix-red/15 text-batflix-red drop-shadow-[0_0_12px_rgba(229,9,20,0.55)]'
+                      : 'text-gray-500'
+                  }`}
+                >
                   {tab.icon(active)}
                 </span>
                 <span

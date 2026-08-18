@@ -1,0 +1,25 @@
+
+> batflix@0.1.0 dev
+> next dev -p 3025
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3025
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1651ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.9s (391 modules)
+ ✓ Compiled in 167ms (391 modules)
+ GET / 200 in 3325ms
+ GET / 200 in 16ms
+ GET / 200 in 15ms
+ GET / 200 in 15ms
+ GET / 200 in 15ms
+ GET / 200 in 137ms
+ ✓ Compiled in 495ms (391 modules)
+ ✓ Compiled in 612ms (391 modules)
+ GET / 200 in 56ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+[?25h

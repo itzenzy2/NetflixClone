@@ -1,0 +1,57 @@
+
+> batflix@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:12737
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 2.8s (393 modules)
+ ✓ Compiled in 152ms (393 modules)
+ GET / 200 in 3218ms
+ GET / 200 in 16ms
+ GET / 200 in 11ms
+ GET / 200 in 13ms
+ GET / 200 in 17ms
+ ✓ Compiled /title/[id] in 248ms (397 modules)
+ GET / 200 in 48ms
+ GET / 200 in 12ms
+ GET / 200 in 21ms
+ ✓ Compiled in 254ms (397 modules)
+ GET / 200 in 29ms
+ GET / 200 in 9ms
+ GET / 200 in 18ms
+ GET / 200 in 19ms
+ ○ Compiling /browse ...
+ ✓ Compiled /browse in 517ms (401 modules)
+ ✓ Compiled /my-list in 177ms (405 modules)
+ GET / 200 in 46ms
+ ✓ Compiled in 294ms (405 modules)
+ ✓ Compiled in 128ms (399 modules)
+ GET / 200 in 30ms
+ ✓ Compiled in 146ms (399 modules)
+ ✓ Compiled in 113ms (399 modules)
+ GET / 200 in 23ms
+ GET / 200 in 14ms
+ ✓ Compiled in 163ms (399 modules)
+ GET / 200 in 26ms
+ GET / 200 in 34ms
+ ✓ Compiled in 554ms (399 modules)
+ ✓ Compiled in 261ms (399 modules)
+ GET / 200 in 43ms
+ ✓ Compiled in 290ms (399 modules)
+ ✓ Compiled in 460ms (399 modules)
+ ✓ Compiled in 325ms (397 modules)
+ ✓ Compiled in 700ms (397 modules)
+ ✓ Compiled /404 in 135ms (401 modules)
+ GET / 404 in 190ms
+ ✓ Compiled /_error in 80ms (403 modules)
+ GET / 404 in 10ms
+ GET / 404 in 8ms
+ GET / 404 in 9ms
+ GET / 404 in 8ms
+ GET / 404 in 8ms
+[?25h

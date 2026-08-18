@@ -368,7 +368,7 @@ export default function BrowsePage() {
         <Header />
 
         {/* Cinematic hero */}
-        <div className="relative h-[38vh] min-h-[280px] max-h-[440px] w-full overflow-hidden bg-batflix-darkGray">
+        <div className="relative h-[44vh] min-h-[320px] max-h-[500px] w-full overflow-hidden bg-batflix-ink">
           {heroContent?.backdrop_path && (
             <Image
               src={getBackdropUrl(heroContent.backdrop_path)}
@@ -379,13 +379,18 @@ export default function BrowsePage() {
               sizes="100vw"
             />
           )}
+          <div className="absolute inset-0 bg-aurora opacity-60 pointer-events-none" aria-hidden="true" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-batflix-black via-batflix-black/30 to-transparent" />
+          <div className="absolute inset-0 [background:radial-gradient(120%_80%_at_18%_55%,transparent_45%,rgba(0,0,0,0.55)_100%)]" />
 
-          <div className="relative h-full max-w-[1700px] mx-auto px-4 md:px-8 lg:px-16 flex flex-col justify-end pb-8 md:pb-12">
-            <div className="flex items-center gap-2 animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-batflix-red" />
-              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Discover</span>
+          <div className="relative h-full max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12 xl:px-16 flex flex-col justify-end pb-8 md:pb-12">
+            <div className="flex items-center gap-2.5 animate-fade-up">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-batflix-red opacity-60" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-batflix-red" />
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.32em] text-white/80">Discover</span>
             </div>
             <h1
               className="text-4xl md:text-6xl font-extrabold tracking-tight mt-3 drop-shadow-xl animate-fade-up"
@@ -407,7 +412,7 @@ export default function BrowsePage() {
           aria-hidden="true"
         />
 
-        <main className="relative max-w-[1700px] mx-auto px-4 md:px-8 lg:px-16 pb-20">
+        <main className="relative max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12 xl:px-16 pb-20">
           {/* Filter toolbar: eyebrow + sort/region */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-6 md:pt-8 pb-8">
             <div className="flex items-center gap-2 animate-fade-up">
@@ -422,7 +427,7 @@ export default function BrowsePage() {
 
             {/* Sort + region toolbar */}
             <div className="flex flex-wrap items-center gap-3 animate-fade-up" style={{ animationDelay: '60ms' }}>
-              <label className="flex items-center gap-3 bg-batflix-darkGray border border-white/10 rounded-full pl-4 pr-1.5 py-1.5 focus-within:border-white/40 transition">
+              <label className="glass flex items-center gap-3 rounded-full pl-4 pr-1.5 py-1.5 focus-within:border-white/40 transition">
                 <span className="text-xs uppercase tracking-wider text-gray-500">Sort</span>
                 <select
                   value={validSortBy}
@@ -434,7 +439,7 @@ export default function BrowsePage() {
                   ))}
                 </select>
               </label>
-              <label className="flex items-center gap-3 bg-batflix-darkGray border border-white/10 rounded-full pl-4 pr-1.5 py-1.5 focus-within:border-white/40 transition">
+              <label className="glass flex items-center gap-3 rounded-full pl-4 pr-1.5 py-1.5 focus-within:border-white/40 transition">
                 <span className="text-xs uppercase tracking-wider text-gray-500">Region</span>
                 <select
                   value={region}
@@ -451,7 +456,7 @@ export default function BrowsePage() {
 
           {/* Media type segmented control */}
           <div className="mb-10 animate-fade-up" style={{ animationDelay: '100ms' }} role="tablist" aria-label="Content type">
-            <div className="inline-flex rounded-full bg-batflix-darkGray border border-white/10 p-1 gap-1">
+            <div className="glass inline-flex rounded-full p-1 gap-1">
               {['movie', 'tv'].map((type) => (
                 <button
                   key={type}

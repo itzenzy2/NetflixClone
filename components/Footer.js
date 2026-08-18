@@ -11,7 +11,7 @@ import BatLogo from './BatLogo';
 export default function Footer() {
   return (
     <footer className="border-t border-black/50 bg-black/20 mt-8">
-      <div className="mx-auto max-w-[1700px] px-4 md:px-8 lg:px-16 py-10">
+      <div className="mx-auto max-w-[1700px] px-4 md:px-8 lg:px-12 xl:px-16 py-10">
         <div className="flex flex-col md:flex-row md:items-center gap-6 md:justify-between">
           {/* Brand */}
           <Link href="/" className="shrink-0 group" aria-label="BatFlix Home">

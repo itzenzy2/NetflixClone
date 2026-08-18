@@ -172,7 +172,7 @@ export default function Home() {
     setContinueWatching(removeWatchProgress(item.id, item.media_type));
   };
 
-  // Handle clicking on a movie/show card -> open the dedicated title page
+  // Handle clicking on a movie/show card -> open the dedicated title page.
   const handleCardClick = (content) => {
     const type = content.media_type || (content.first_air_date ? 'tv' : 'movie');
     router.push(`/title/${content.id}?type=${type}`);
@@ -233,13 +233,13 @@ export default function Home() {
         {/* Content Rows */}
         <div className="relative max-w-[1700px] mx-auto pb-20 space-y-8 md:space-y-12 -mt-8 md:-mt-14 lg:-mt-20 z-10">
           {/* Surprise Me */}
-          <div className="px-4 md:px-8 lg:px-16">
+          <div className="px-4 md:px-8 lg:px-12 xl:px-16">
             <button
               onClick={handleSurprise}
-              className="flex items-center gap-2 h-11 px-5 rounded-full bg-batflix-darkGray border border-white/10 text-sm font-semibold text-gray-200 hover:bg-white/10 hover:border-white/30 active:scale-95 transition"
+              className="glass flex items-center gap-2.5 h-12 px-6 rounded-full text-sm font-semibold text-gray-100 hover:bg-white/15 hover:border-white/30 active:scale-95 transition"
               title="Open a random title"
             >
-              <svg className="w-4 h-4 text-batflix-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-batflix-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

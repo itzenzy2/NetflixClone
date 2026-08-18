@@ -1,0 +1,145 @@
+
+> batflix@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:1232
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1887ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.7s (391 modules)
+ ✓ Compiled in 165ms (391 modules)
+ GET / 200 in 13ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 26ms
+ GET / 200 in 32ms
+ ✓ Compiled /browse in 347ms (395 modules)
+ ✓ Compiled /my-list in 184ms (399 modules)
+ GET / 200 in 50ms
+ GET / 200 in 15ms
+ GET / 200 in 11ms
+ GET / 200 in 14ms
+ GET / 200 in 11ms
+ ✓ Compiled in 1163ms (399 modules)
+ GET / 200 in 49ms
+ GET / 200 in 16ms
+ ✓ Compiled in 557ms (397 modules)
+ GET / 200 in 80ms
+ GET / 200 in 17ms
+ GET / 200 in 16ms
+ ✓ Compiled in 475ms (397 modules)
+ ✓ Compiled in 627ms (397 modules)
+ ○ Compiling /title/[id] ...
+ ✓ Compiled /title/[id] in 1641ms (401 modules)
+ GET /title/95350?type=tv 200 in 40ms
+ ✓ Compiled /watch/[type]/[id] in 152ms (401 modules)
+ GET / 200 in 27ms
+ ✓ Compiled /browse in 196ms (403 modules)
+ ✓ Compiled /my-list in 77ms (407 modules)
+ ✓ Compiled in 960ms (397 modules)
+ ✓ Compiled /404 in 110ms (401 modules)
+ GET / 404 in 154ms
+ GET / 200 in 16ms
+ ✓ Compiled in 942ms (397 modules)
+ ✓ Compiled in 471ms (397 modules)
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 79ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 10ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 15ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 11ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 14ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 11ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 27ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 11ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 12ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 8ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 16ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 8ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 16ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 8ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 14ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 14ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 15ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 10ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 13ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 10ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 21ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 8ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 13ms
+Could not find files for /404 in .next/build-manifest.json
+Could not find files for /404 in .next/build-manifest.json
+ GET /_next/static/webpack/cf3c64cf3ae33f8e.webpack.hot-update.json 404 in 9ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 14ms
+ ✓ Compiled /_error in 106ms (399 modules)
+ GET / 404 in 121ms
+ GET / 404 in 18ms
+ GET / 404 in 8ms
+ GET / 200 in 38ms
+ GET / 200 in 5ms
+ ✓ Compiled in 1335ms (397 modules)
+ ✓ Compiled in 416ms (397 modules)
+ ✓ Compiled in 238ms (397 modules)
+ GET / 200 in 42ms
+[?25h

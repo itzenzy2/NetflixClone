@@ -77,7 +77,7 @@ export default function CarouselRow({ title, items, onItemClick, onRemoveItem })
     <Reveal>
     <div className="space-y-2 md:space-y-4 group relative">
       {/* Row Title */}
-      <div className="flex items-baseline gap-3 px-4 md:px-8 lg:px-16">
+      <div className="flex items-baseline gap-3 px-4 md:px-8 lg:px-12 xl:px-16">
         <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
           {title}
         </h2>
@@ -90,11 +90,19 @@ export default function CarouselRow({ title, items, onItemClick, onRemoveItem })
 
       {/* Carousel Container */}
       <div className="relative">
+        {/* Edge fades hinting that the row scrolls */}
+        {canScrollLeft && (
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 md:w-8 bg-gradient-to-r from-batflix-black/70 to-transparent z-30" aria-hidden="true" />
+        )}
+        {canScrollRight && (
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 md:w-8 bg-gradient-to-l from-batflix-black/70 to-transparent z-30" aria-hidden="true" />
+        )}
+
         {/* Left Scroll Button */}
         {canScrollLeft && (
           <button
             onClick={handleScrollLeft}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-40 hidden md:flex h-11 w-11 items-center justify-center rounded-full bg-black/55 border border-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black/80 hover:scale-110 active:scale-95 shadow-lg shadow-black/40"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-40 hidden md:flex h-11 w-11 items-center justify-center rounded-full bg-black/60 border border-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-batflix-red/30 hover:border-batflix-red/60 hover:scale-110 active:scale-95 shadow-lg shadow-black/40"
             aria-label="Scroll left"
           >
             <svg
@@ -117,7 +125,7 @@ export default function CarouselRow({ title, items, onItemClick, onRemoveItem })
         <div
           ref={rowRef}
           onScroll={handleScroll}
-          className="flex items-center space-x-2 md:space-x-4 overflow-x-scroll scrollbar-hide snap-x snap-proximity scroll-pl-4 md:scroll-pl-8 lg:scroll-pl-16 px-4 md:px-8 lg:px-16 py-4"
+          className="flex items-center space-x-2 md:space-x-4 overflow-x-scroll scrollbar-hide snap-x snap-proximity scroll-pl-4 md:scroll-pl-8 lg:scroll-pl-12 xl:scroll-pl-16 px-4 md:px-8 lg:px-12 xl:px-16 py-4"
         >
           {items.map((item) => (
             <MovieCard
@@ -133,7 +141,7 @@ export default function CarouselRow({ title, items, onItemClick, onRemoveItem })
         {canScrollRight && (
           <button
             onClick={handleScrollRight}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-40 hidden md:flex h-11 w-11 items-center justify-center rounded-full bg-black/55 border border-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black/80 hover:scale-110 active:scale-95 shadow-lg shadow-black/40"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-40 hidden md:flex h-11 w-11 items-center justify-center rounded-full bg-black/60 border border-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-batflix-red/30 hover:border-batflix-red/60 hover:scale-110 active:scale-95 shadow-lg shadow-black/40"
             aria-label="Scroll right"
           >
             <svg

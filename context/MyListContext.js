@@ -13,6 +13,7 @@ import {
   addToMyList,
   removeFromMyList,
   isInMyList,
+  setItemStatus as setStorageItemStatus,
   clearMyList as clearStorageList
 } from '../lib/storage';
 
@@ -100,6 +101,17 @@ export function MyListProvider({ children }) {
   };
 
   /**
+   * Change an item's status ('list', 'planning', or 'watched')
+   * @param {number} itemId - The TMDb ID
+   * @param {string} mediaType - 'movie' or 'tv'
+   * @param {string} status - New status for the item
+   */
+  const changeItemStatus = (itemId, mediaType, status) => {
+    const updatedList = setStorageItemStatus(itemId, mediaType, status);
+    setMyList(updatedList);
+  };
+
+  /**
    * Clear all items from My List
    */
   const clearList = () => {
@@ -122,6 +134,7 @@ export function MyListProvider({ children }) {
     removeItem,
     toggleItem,
     isItemInList,
+    changeItemStatus,
     clearList,
     getCount,
     isLoaded, // Useful to show loading state

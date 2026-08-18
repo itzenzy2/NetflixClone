@@ -1,0 +1,45 @@
+
+> batflix@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:8497
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1642ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.6s (391 modules)
+ ✓ Compiled in 160ms (391 modules)
+ GET / 200 in 3031ms
+ GET / 200 in 13ms
+ ✓ Compiled /title/[id] in 112ms (395 modules)
+ GET /title/646389 200 in 173ms
+ GET / 200 in 17ms
+ GET / 200 in 11ms
+ GET / 200 in 11ms
+ GET / 200 in 85ms
+ GET / 200 in 15ms
+ GET / 200 in 25ms
+ GET / 200 in 17ms
+ GET / 200 in 11ms
+ ✓ Compiled /browse in 308ms (399 modules)
+ GET / 200 in 49ms
+ GET / 200 in 12ms
+ GET /title/1323244?type=movie 200 in 20ms
+ ✓ Compiled /my-list in 400ms (403 modules)
+ GET / 200 in 53ms
+ ✓ Compiled in 1758ms (401 modules)
+ GET / 200 in 25ms
+ GET / 200 in 31ms
+ GET / 200 in 11ms
+ GET / 200 in 16ms
+ GET / 200 in 10ms
+ GET / 200 in 14ms
+ ✓ Compiled in 540ms (397 modules)
+ ✓ Compiled in 356ms (397 modules)
+Could not find files for / in .next/build-manifest.json
+Could not find files for / in .next/build-manifest.json
+ GET / 200 in 43ms
+ ○ Compiling /404 ...
+[?25h

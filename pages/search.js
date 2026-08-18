@@ -46,11 +46,13 @@ export default function SearchPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
-  // Mirror the query to the URL so it can be shared
+  // Mirror the query to the URL so it can be shared, and drop the param when cleared
   useEffect(() => {
     const trimmed = debouncedQuery.trim();
     if (trimmed && trimmed !== query) {
       router.replace(`/search?q=${encodeURIComponent(trimmed)}`, undefined, { shallow: true });
+    } else if (!trimmed && query) {
+      router.replace('/search', undefined, { shallow: true });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQuery]);
@@ -109,7 +111,7 @@ export default function SearchPage() {
       <div className="min-h-screen bg-batflix-black">
         <Header />
 
-        <main className="max-w-[1700px] mx-auto pt-24 md:pt-28 px-4 md:px-8 lg:px-16 pb-20">
+        <main className="max-w-[1700px] mx-auto pt-24 md:pt-28 px-4 md:px-8 lg:px-12 xl:px-16 pb-20">
           {/* Search Input */}
           <form
             onSubmit={(e) => {

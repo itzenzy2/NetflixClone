@@ -11,12 +11,12 @@
  */
 
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getMovieDetails, getTVShowDetails, getSeasonDetails, getBackdropUrl, getImageUrl } from '../../../lib/tmdb';
-import { updateWatchProgress } from '../../../lib/storage';
+import { updateWatchProgress, getContinueWatching } from '../../../lib/storage';
 import { useMyList } from '../../../context/MyListContext';
 
 export default function WatchPage() {
@@ -28,6 +28,7 @@ export default function WatchPage() {
   // TV show episode state
   const [season, setSeason] = useState('1');
   const [episode, setEpisode] = useState('1');
+  const prevEpisodeRef = useRef(null);
   const [totalSeasons, setTotalSeasons] = useState(0);
   const [episodes, setEpisodes] = useState([]);
   const [showTitle, setShowTitle] = useState('');
@@ -44,9 +45,11 @@ export default function WatchPage() {
     if (router.query.episode) setEpisode(String(router.query.episode));
   }, [router.query.season, router.query.episode]);
 
-  // Build the embed URL whenever type/id/season/episode changes
+  // Build the embed URL whenever type/id/season/episode changes.
+  // router.isReady guards the first render of a directly-loaded URL, where
+  // router.query is still empty for this auto-exported dynamic route.
   useEffect(() => {
-    if (!type || !id) return;
+    if (!router.isReady || !type || !id) return;
 
     let url = '';
 
@@ -72,11 +75,37 @@ export default function WatchPage() {
 
     // Record progress so Continue Watching stays up to date
     updateWatchProgress(id, type, type === 'tv' ? { season: Number(season), episode: Number(episode) } : {});
-  }, [type, id, season, episode]);
+  }, [router.isReady, type, id, season, episode]);
+
+  // Approximate watch progress over time. The embedded player is a
+  // cross-origin iframe, so its position can't be read directly — instead the
+  // fraction watched creeps up while the page is open and persists between
+  // sessions, powering the progress bar on Continue Watching cards.
+  useEffect(() => {
+    if (!router.isReady || !type || !id || !iframeUrl) return;
+
+    // First visit continues from the stored position; switching episode or
+    // season restarts the bar for the new episode.
+    const stored = getContinueWatching().find(
+      (entry) => entry.id === Number(id) && entry.media_type === type
+    );
+    const epChanged =
+      prevEpisodeRef.current &&
+      (prevEpisodeRef.current.season !== season || prevEpisodeRef.current.episode !== episode);
+    prevEpisodeRef.current = { season, episode };
+
+    let progress = epChanged ? 0.02 : stored?.progress ?? 0.02;
+    const tick = () => {
+      progress = Math.min(progress + 0.02, 0.9);
+      updateWatchProgress(id, type, { progress });
+    };
+    const timer = setInterval(tick, 15000);
+    return () => clearInterval(timer);
+  }, [router.isReady, type, id, season, episode, iframeUrl]);
 
   // Fetch show metadata for the TV episode switcher
   useEffect(() => {
-    if (type !== 'tv' || !id) return;
+    if (!router.isReady || type !== 'tv' || !id) return;
     let cancelled = false;
 
     getTVShowDetails(id)
@@ -92,11 +121,11 @@ export default function WatchPage() {
     return () => {
       cancelled = true;
     };
-  }, [type, id]);
+  }, [router.isReady, type, id]);
 
   // Fetch movie metadata for the header + About panel
   useEffect(() => {
-    if (type !== 'movie' || !id) return;
+    if (!router.isReady || type !== 'movie' || !id) return;
     let cancelled = false;
     getMovieDetails(id)
       .then((data) => {
@@ -109,11 +138,11 @@ export default function WatchPage() {
     return () => {
       cancelled = true;
     };
-  }, [type, id]);
+  }, [router.isReady, type, id]);
 
   // Fetch episodes for the selected season
   useEffect(() => {
-    if (type !== 'tv' || !id) return;
+    if (!router.isReady || type !== 'tv' || !id) return;
     let cancelled = false;
 
     getSeasonDetails(id, season)
@@ -125,13 +154,13 @@ export default function WatchPage() {
     return () => {
       cancelled = true;
     };
-  }, [type, id, season]);
+  }, [router.isReady, type, id, season]);
 
   // My List membership
   useEffect(() => {
-    if (!id || !type) return;
+    if (!router.isReady || !id || !type) return;
     setInList(isItemInList(id, type));
-  }, [id, type, isItemInList]);
+  }, [router.isReady, id, type, isItemInList]);
 
   // Handle escape key to exit fullscreen
   useEffect(() => {
@@ -258,13 +287,14 @@ export default function WatchPage() {
               sizes="100vw"
               className="object-cover object-top opacity-25"
             />
+            <div className="absolute inset-0 bg-aurora opacity-50" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-batflix-black/50 to-batflix-black" />
           </div>
         )}
 
         <div className="relative z-10">
           {/* Player header: back · title · fullscreen */}
-          <div className="max-w-[1700px] mx-auto px-4 md:px-8 lg:px-16 pt-4 md:pt-6 safe-top">
+          <div className="max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12 xl:px-16 pt-4 md:pt-6 safe-top">
             <div className="flex items-center justify-between gap-3">
               <button
                 onClick={handleGoBack}

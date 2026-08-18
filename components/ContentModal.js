@@ -12,6 +12,7 @@ import { getBackdropUrl, getMovieDetails, getTVShowDetails, getSeasonDetails, ge
 import { useMyList } from '../context/MyListContext';
 import { saveWatchProgress } from '../lib/storage';
 
+
 export default function ContentModal({ content, onClose, onSelectContent }) {
   const router = useRouter();
   const { toggleItem, isItemInList } = useMyList();
@@ -95,11 +96,12 @@ export default function ContentModal({ content, onClose, onSelectContent }) {
     setInList(!inList);
   };
 
-  // Open the dedicated title page for this content
+  // Open the dedicated title page for this content.
   const goToTitlePage = () => {
     const type = isTVShow ? 'tv' : 'movie';
-    router.push(`/title/${content.id}?type=${type}`);
+    const url = `/title/${content.id}?type=${type}`;
     onClose();
+    router.push(url);
   };
 
   // Close on Escape and lock page scroll while the modal is open
@@ -127,11 +129,11 @@ export default function ContentModal({ content, onClose, onSelectContent }) {
   if (error) {
     return (
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 animate-fade-in"
         onClick={onClose}
       >
         <div
-          className="bg-batflix-darkGray rounded-2xl border border-white/10 shadow-soft max-w-md w-full p-8 text-center animate-modal-in"
+          className="glass bg-batflix-ink/90 rounded-3xl shadow-soft max-w-md w-full p-8 text-center animate-modal-in"
           onClick={(e) => e.stopPropagation()}
         >
           <p className="text-white text-lg mb-6">{error}</p>
@@ -159,7 +161,7 @@ export default function ContentModal({ content, onClose, onSelectContent }) {
 
   if (loading || !details) {
     return (
-      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm gap-4 animate-fade-in">
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/85 backdrop-blur-md gap-4 animate-fade-in">
         <div className="spinner" role="status" aria-label="Loading" />
         <div className="text-white text-sm text-batflix-lightGray">Loading details...</div>
       </div>
@@ -179,11 +181,11 @@ export default function ContentModal({ content, onClose, onSelectContent }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex justify-center overflow-y-auto bg-black/90 p-2 sm:p-4 animate-fade-in"
+      className="fixed inset-0 z-50 flex justify-center overflow-y-auto bg-black/90 backdrop-blur-md p-2 sm:p-4 animate-fade-in"
       onClick={onClose}
     >
       <div
-        className="bg-batflix-darkGray rounded-2xl max-w-5xl w-full my-auto overflow-hidden border border-white/10 shadow-soft animate-modal-in"
+        className="bg-batflix-ink/95 backdrop-blur-2xl rounded-3xl max-w-5xl w-full my-auto overflow-hidden border border-white/10 ring-1 ring-white/5 shadow-soft animate-modal-in"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header with backdrop */}
@@ -195,7 +197,7 @@ export default function ContentModal({ content, onClose, onSelectContent }) {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 1200px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-batflix-darkGray via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-batflix-ink via-transparent to-transparent" />
 
           {/* Type badge */}
           <div className="absolute top-3 left-3 md:top-4 md:left-4 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-white/80">
@@ -217,7 +219,7 @@ export default function ContentModal({ content, onClose, onSelectContent }) {
           <div className="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8 flex items-center space-x-2 md:space-x-3">
             <button
               onClick={handlePlay}
-              className="flex items-center space-x-2 bg-white text-black h-11 md:h-12 px-5 sm:px-8 rounded-full font-semibold hover:bg-white/80 active:scale-95 transition shadow-lg shadow-black/30 shrink-0"
+              className="flex items-center space-x-2 bg-white text-black h-11 md:h-12 px-5 sm:px-8 rounded-full font-semibold hover:bg-white/90 hover:shadow-glow-soft active:scale-95 transition-all duration-200 shadow-lg shadow-black/30 shrink-0"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
@@ -229,7 +231,7 @@ export default function ContentModal({ content, onClose, onSelectContent }) {
             {trailer && (
               <button
                 onClick={() => setShowTrailer(true)}
-                className="flex items-center space-x-2 bg-white/10 border border-white/20 backdrop-blur-md text-white h-11 md:h-12 px-4 sm:px-6 rounded-full font-semibold hover:bg-white/20 active:scale-95 transition shrink-0"
+                className="glass flex items-center space-x-2 text-white h-11 md:h-12 px-4 sm:px-6 rounded-full font-semibold hover:bg-white/15 hover:border-white/25 active:scale-95 transition shrink-0"
               >
                 <svg className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -240,7 +242,7 @@ export default function ContentModal({ content, onClose, onSelectContent }) {
 
             <button
               onClick={handleMyListToggle}
-              className="flex items-center justify-center w-11 h-11 md:w-12 md:h-12 bg-white/10 border border-white/40 backdrop-blur-md text-white rounded-full hover:border-white hover:bg-white/20 active:scale-90 transition shrink-0"
+              className="glass flex items-center justify-center w-11 h-11 md:w-12 md:h-12 text-white rounded-full hover:border-batflix-red/60 hover:bg-batflix-red/10 active:scale-90 transition-all duration-200 shrink-0"
               title={inList ? 'Remove from My List' : 'Add to My List'}
             >
               {inList ? (

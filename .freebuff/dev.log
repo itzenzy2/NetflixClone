@@ -1,0 +1,210 @@
+
+> batflix@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:8522
+  - Environments: .env.local
+
+ ✓ Starting...
+<w> [webpack.cache.PackFileCacheStrategy] Restoring pack failed from E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\server-development.pack.gz: Error: unexpected end of file
+ ✓ Ready in 1798ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.5s (389 modules)
+ ✓ Compiled in 153ms (389 modules)
+ GET / 200 in 2921ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: EPERM: operation not permitted, rename 'E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\server-development\0.pack.gz_' -> 'E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\server-development\0.pack.gz'
+ GET / 200 in 21ms
+ ✓ Compiled in 483ms (347 modules)
+ ✓ Compiled in 223ms (223 modules)
+ ✓ Compiled in 153ms (223 modules)
+ ✓ Compiled in 194ms (223 modules)
+ ✓ Compiled in 160ms (223 modules)
+ ✓ Compiled in 240ms (223 modules)
+ ✓ Compiled in 309ms (223 modules)
+ ✓ Compiled in 358ms (223 modules)
+ ✓ Compiled in 412ms (223 modules)
+ ✓ Compiled in 257ms (223 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\client-development\0.pack.gz_' -> 'E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\client-development\0.pack.gz'
+ ✓ Compiled in 241ms (223 modules)
+ ⨯ pages\_app.js
+`next/font` error:
+Unknown weight `100 900` for font `Outfit`.
+Available weights: `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`, `variable`
+ ⨯ pages\_app.js
+`next/font` error:
+Unknown weight `100 900` for font `Outfit`.
+Available weights: `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`, `variable`
+ ✓ Compiled in 714ms (347 modules)
+ ✓ Compiled in 595ms (347 modules)
+ ✓ Compiled in 1446ms (350 modules)
+ ✓ Compiled in 993ms (225 modules)
+ ✓ Compiled in 487ms (225 modules)
+ ✓ Compiled in 1163ms (347 modules)
+ ✓ Compiled in 189ms (223 modules)
+ ✓ Compiled in 231ms (223 modules)
+ ✓ Compiled in 301ms (223 modules)
+ ✓ Compiled in 122ms (223 modules)
+ ✓ Compiled in 193ms (223 modules)
+ ✓ Compiled in 245ms (223 modules)
+ ✓ Compiled in 251ms (223 modules)
+ ✓ Compiled in 403ms (223 modules)
+ ✓ Compiled in 378ms (347 modules)
+ ✓ Compiled in 212ms (223 modules)
+ ✓ Compiled in 100ms (223 modules)
+ ✓ Compiled in 429ms (347 modules)
+ ✓ Compiled in 145ms (223 modules)
+ ✓ Compiled in 518ms (347 modules)
+ ✓ Compiled in 191ms (223 modules)
+ ✓ Compiled in 461ms (347 modules)
+ ✓ Compiled in 773ms (347 modules)
+ ✓ Compiled in 352ms (347 modules)
+ ✓ Compiled in 534ms (347 modules)
+ ✓ Compiled in 534ms (223 modules)
+ ✓ Compiled in 150ms (223 modules)
+ ✓ Compiled in 133ms (223 modules)
+ ✓ Compiled in 404ms (223 modules)
+ ✓ Compiled in 128ms (223 modules)
+ ✓ Compiled in 333ms (347 modules)
+ ✓ Compiled in 307ms (347 modules)
+ ✓ Compiled in 501ms (347 modules)
+ ✓ Compiled in 139ms (223 modules)
+ ✓ Compiled in 113ms (223 modules)
+ ✓ Compiled in 161ms (223 modules)
+ ✓ Compiled in 134ms (223 modules)
+ ✓ Compiled in 122ms (223 modules)
+ ✓ Compiled in 127ms (223 modules)
+ ✓ Compiled in 107ms (223 modules)
+ ✓ Compiled in 142ms (223 modules)
+ ✓ Compiled in 98ms (223 modules)
+ ✓ Compiled in 112ms (223 modules)
+ ✓ Compiled in 177ms (347 modules)
+ ✓ Compiled in 137ms (223 modules)
+ ✓ Compiled in 475ms (347 modules)
+ ✓ Compiled in 303ms (223 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\index.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/pages/index' in E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\index.js', but to 'Error: Can't resolve '../../../../.next/server/pages/index' in 'E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/pages/index (expected E:\Dev\Github Repos\NetflixClone\.next\server\pages\index.js)
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\webpack\bundle5.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\webpack\bundle5.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\webpack\webpack.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\webpack\webpack.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\plugins\define-env-plugin.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\plugins\define-env-plugin.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\swc\index.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\swc\index.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+ ✓ Compiled in 162ms (223 modules)
+ ✓ Compiled in 156ms (223 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: EPERM: operation not permitted, rename 'E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\client-development\2.pack.gz_' -> 'E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\client-development\2.pack.gz'
+ ✓ Compiled in 174ms (223 modules)
+ ✓ Compiled in 210ms (223 modules)
+ ✓ Compiled in 133ms (223 modules)
+ ✓ Compiled in 217ms (223 modules)
+ ✓ Compiled in 660ms (347 modules)
+ ✓ Compiled in 793ms (347 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\server-development\2.pack.gz_' -> 'E:\Dev\Github Repos\NetflixClone\.next\cache\webpack\server-development\2.pack.gz'
+ ✓ Compiled in 152ms (223 modules)
+ ✓ Compiled in 167ms (223 modules)
+ ✓ Compiled in 121ms (223 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'E:\Dev\Github Repos\NetflixClone\.next\server\pages'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving '../../../../.next/server/pages/index' in E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server for build dependencies doesn't lead to expected result 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\index.js', but to 'Error: Can't resolve '../../../../.next/server/pages/index' in 'E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ../../../../.next/server/pages/index (expected E:\Dev\Github Repos\NetflixClone\.next\server\pages\index.js)
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\webpack\bundle5.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\webpack\bundle5.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\webpack\webpack.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\compiled\webpack\webpack.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\plugins\define-env-plugin.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\plugins\define-env-plugin.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\swc\index.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\swc\index.js
+<w>  at file dependencies E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+ ✓ Compiled in 247ms (223 modules)
+ ✓ Compiled in 146ms (223 modules)
+ ✓ Compiled in 191ms (223 modules)
+ ✓ Compiled in 340ms (223 modules)
+ ✓ Compiled in 166ms (223 modules)
+ ✓ Compiled in 1099ms (347 modules)
+ ✓ Compiled in 1213ms (347 modules)
+ ✓ Compiled in 561ms (347 modules)
+ ✓ Compiled in 307ms (223 modules)
+ ✓ Compiled in 332ms (223 modules)
+ ✓ Compiled in 484ms (347 modules)
+ ✓ Compiled in 268ms (223 modules)
+ ✓ Compiled in 576ms (347 modules)
+ ✓ Compiled in 986ms (347 modules)
+ ✓ Compiled in 972ms (347 modules)
+ ✓ Compiled in 349ms (223 modules)
+ ✓ Compiled in 1472ms (347 modules)
+ ✓ Compiled / in 485ms (391 modules)
+ ⨯ Error: Cannot find module './chunks/vendor-chunks/next.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\.next\server\webpack-runtime.js
+- E:\Dev\Github Repos\NetflixClone\.next\server\pages\_document.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at t.f.require (E:\Dev\Github Repos\NetflixClone\.next\server\webpack-runtime.js:1:959)
+    at E:\Dev\Github Repos\NetflixClone\.next\server\webpack-runtime.js:1:432
+    at Array.reduce (<anonymous>)
+    at t.e (E:\Dev\Github Repos\NetflixClone\.next\server\webpack-runtime.js:1:411)
+    at Array.map (<anonymous>) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\.next\\server\\webpack-runtime.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\.next\\server\\pages\\_document.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/'
+}
+ ✓ Compiled /_error in 79ms (393 modules)
+ GET / 500 in 785ms
+ ✓ Compiled in 467ms (393 modules)
+ ✓ Compiled in 235ms (347 modules)
+[?25h

@@ -44,9 +44,11 @@ export default function TitlePage() {
 
   const isTVShow = type === 'tv';
 
-  // Resolve the type (explicit from the URL, or guess movie -> tv) and fetch details
+  // Resolve the type (explicit from the URL, or guess movie -> tv) and fetch details.
+  // router.isReady guards against the first render of a directly-loaded URL,
+  // where router.query is still empty for this auto-exported dynamic route.
   useEffect(() => {
-    if (!id) return;
+    if (!router.isReady || !id) return;
     let cancelled = false;
     setError(null);
     setDetails(null);
@@ -89,13 +91,15 @@ export default function TitlePage() {
     return () => {
       cancelled = true;
     };
-  }, [id, typeParam]);
+  }, [router.isReady, id, typeParam]);
 
   // My List state
   useEffect(() => {
     if (!id || !type) return;
     setInList(isItemInList(id, type));
   }, [id, type, isItemInList]);
+
+
 
   // Episodes for the selected season (TV only)
   useEffect(() => {
@@ -207,13 +211,14 @@ export default function TitlePage() {
               sizes="100vw"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-batflix-darkGray to-batflix-black" />
+            <div className="w-full h-full bg-gradient-to-br from-batflix-surface to-batflix-black" />
           )}
+          <div className="absolute inset-0 bg-aurora opacity-50 pointer-events-none" aria-hidden="true" />
           <div className="absolute inset-0 bg-gradient-to-t from-batflix-black via-batflix-black/40 to-transparent" />
 
           {/* Hero content - constrained to the same 1700px container as the
               body sections, so left edges stay aligned on wide screens */}
-          <div className="relative h-full max-w-[1700px] mx-auto px-4 md:px-8 lg:px-16">
+          <div className="relative h-full max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12 xl:px-16">
             <div className="h-full flex flex-col justify-end pb-10 md:pb-16 max-w-3xl">
             {/* Back button + type eyebrow share one row, so the top-left reads
                 as a single cluster instead of a lone floating button */}
@@ -236,7 +241,7 @@ export default function TitlePage() {
             </div>
 
             <div className="animate-fade-up" style={{ animationDelay: '120ms' }}>
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-xl">{title}</h1>
+              <h1 className="text-gradient text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-xl">{title}</h1>
             </div>
 
             <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm md:text-base animate-fade-up" style={{ animationDelay: '180ms' }}>
@@ -300,7 +305,7 @@ export default function TitlePage() {
         </div>
 
         {/* Body */}
-        <main className="max-w-[1700px] mx-auto px-4 md:px-8 lg:px-16 pb-20 space-y-12 -mt-4 relative z-10">
+        <main className="max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12 xl:px-16 pb-20 space-y-12 -mt-4 relative z-10">
           {/* Overview */}
           <Reveal>
             <section>
