@@ -7,8 +7,10 @@
  */
 
 import { useState } from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-export default function MovieCard({ item, onClick }) {
+export default function MovieCard({ item, onClick, onRemove }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -21,11 +23,15 @@ export default function MovieCard({ item, onClick }) {
   // Get the title (works for both movies and TV shows)
   const title = item.title || item.name || 'Untitled';
 
-  // Handle card click
+  // Handle card click: custom handler if given, otherwise open the title page
+  const router = useRouter();
   const handleClick = () => {
     if (onClick) {
       onClick(item);
+      return;
     }
+    const type = item.media_type || (item.first_air_date ? 'tv' : 'movie');
+    router.push(`/title/${item.id}?type=${type}`);
   };
 
   // Handle image load
@@ -42,32 +48,34 @@ export default function MovieCard({ item, onClick }) {
   return (
     <div
       onClick={handleClick}
-      className="relative min-w-[150px] md:min-w-[200px] h-[225px] md:h-[300px] cursor-pointer transition-transform duration-300 ease-out hover:scale-105 group"
+      className="relative min-w-[150px] md:min-w-[200px] h-[225px] md:h-[300px] shrink-0 snap-start cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:z-10 hover:shadow-card group rounded-xl overflow-hidden ring-1 ring-white/5 hover:ring-white/15"
     >
       {/* Poster Image */}
       {imageUrl && !imageError ? (
         <>
           {/* Loading skeleton */}
           {!imageLoaded && (
-            <div className="absolute inset-0 bg-gray-700 animate-pulse rounded-md" />
+            <div className="absolute inset-0 shimmer" />
           )}
           
           {/* Image */}
-          <img
+          <Image
             src={imageUrl}
             alt={title}
+            fill
+            sizes="200px"
             onLoad={handleImageLoad}
             onError={handleImageError}
             className={`
-              w-full h-full object-cover rounded-md
-              transition-opacity duration-300
+              object-cover rounded-xl
+              transition-all duration-500 group-hover:scale-105
               ${imageLoaded ? 'opacity-100' : 'opacity-0'}
             `}
           />
         </>
       ) : (
         // Fallback when no image
-        <div className="w-full h-full bg-gray-800 rounded-md flex items-center justify-center">
+        <div className="w-full h-full bg-gray-800/70 rounded-xl flex items-center justify-center">
           <svg
             className="w-16 h-16 text-gray-600"
             fill="none"
@@ -84,8 +92,31 @@ export default function MovieCard({ item, onClick }) {
         </div>
       )}
 
+      {/* Remove button (continue watching) */}
+      {onRemove && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onRemove(item);
+          }}
+          aria-label={`Remove ${title} from Continue Watching`}
+          className="absolute top-2 left-2 z-10 w-8 h-8 bg-black/60 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition hover:bg-black/85 active:scale-90 [@media(pointer:coarse)]:opacity-100"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      )}
+
+      {/* Quick Play Button (hover) */}
+      <div className="absolute top-2 right-2 w-9 h-9 bg-black/60 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-100 scale-75 pointer-events-none">
+        <svg className="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+
       {/* Hover Overlay with Title */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md flex items-end">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end">
         <div className="p-3 w-full">
           <h3 className="text-white font-semibold text-sm md:text-base line-clamp-2">
             {title}

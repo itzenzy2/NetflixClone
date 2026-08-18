@@ -5,10 +5,11 @@
  * Includes left and right scroll buttons.
  */
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import MovieCard from './MovieCard';
+import Reveal from './Reveal';
 
-export default function CarouselRow({ title, items, onItemClick }) {
+export default function CarouselRow({ title, items, onItemClick, onRemoveItem }) {
   const rowRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
@@ -21,9 +22,19 @@ export default function CarouselRow({ title, items, onItemClick }) {
   const updateScrollBounds = () => {
     if (rowRef.current) {
       const { scrollWidth, clientWidth } = rowRef.current;
-      setMaxScroll(scrollWidth - clientWidth);
+      setMaxScroll(Math.max(scrollWidth - clientWidth, 0));
     }
   };
+
+  // Measure bounds on mount and whenever items change or the window resizes
+  useEffect(() => {
+    updateScrollBounds();
+
+    const handleResize = () => updateScrollBounds();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [items]);
 
   // Handle scroll left
   const handleScrollLeft = () => {
@@ -63,11 +74,19 @@ export default function CarouselRow({ title, items, onItemClick }) {
   }
 
   return (
+    <Reveal>
     <div className="space-y-2 md:space-y-4 group relative">
       {/* Row Title */}
-      <h2 className="text-xl md:text-2xl font-semibold px-4 md:px-8 lg:px-16">
-        {title}
-      </h2>
+      <div className="flex items-baseline gap-3 px-4 md:px-8 lg:px-16">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
+          {title}
+        </h2>
+        {items.length > 0 && (
+          <span className="text-xs text-batflix-lightGray/70 hidden sm:inline">
+            {items.length} title{items.length === 1 ? '' : 's'}
+          </span>
+        )}
+      </div>
 
       {/* Carousel Container */}
       <div className="relative">
@@ -75,11 +94,11 @@ export default function CarouselRow({ title, items, onItemClick }) {
         {canScrollLeft && (
           <button
             onClick={handleScrollLeft}
-            className="absolute left-0 top-0 bottom-0 z-40 w-12 md:w-16 bg-gradient-to-r from-black/80 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-40 hidden md:flex h-11 w-11 items-center justify-center rounded-full bg-black/55 border border-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black/80 hover:scale-110 active:scale-95 shadow-lg shadow-black/40"
             aria-label="Scroll left"
           >
             <svg
-              className="w-8 h-8 text-white"
+              className="w-5 h-5 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -98,14 +117,14 @@ export default function CarouselRow({ title, items, onItemClick }) {
         <div
           ref={rowRef}
           onScroll={handleScroll}
-          onLoad={updateScrollBounds}
-          className="flex items-center space-x-2 md:space-x-4 overflow-x-scroll scrollbar-hide px-4 md:px-8 lg:px-16 py-4"
+          className="flex items-center space-x-2 md:space-x-4 overflow-x-scroll scrollbar-hide snap-x snap-proximity scroll-pl-4 md:scroll-pl-8 lg:scroll-pl-16 px-4 md:px-8 lg:px-16 py-4"
         >
           {items.map((item) => (
             <MovieCard
               key={`${item.id}-${item.media_type || 'movie'}`}
               item={item}
               onClick={onItemClick}
+              onRemove={onRemoveItem}
             />
           ))}
         </div>
@@ -114,11 +133,11 @@ export default function CarouselRow({ title, items, onItemClick }) {
         {canScrollRight && (
           <button
             onClick={handleScrollRight}
-            className="absolute right-0 top-0 bottom-0 z-40 w-12 md:w-16 bg-gradient-to-l from-black/80 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-40 hidden md:flex h-11 w-11 items-center justify-center rounded-full bg-black/55 border border-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black/80 hover:scale-110 active:scale-95 shadow-lg shadow-black/40"
             aria-label="Scroll right"
           >
             <svg
-              className="w-8 h-8 text-white"
+              className="w-5 h-5 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -134,5 +153,6 @@ export default function CarouselRow({ title, items, onItemClick }) {
         )}
       </div>
     </div>
+    </Reveal>
   );
 }

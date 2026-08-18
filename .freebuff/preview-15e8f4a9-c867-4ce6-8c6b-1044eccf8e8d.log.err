@@ -1,0 +1,343 @@
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}
+ ⨯ Error: Cannot find module 'E:\Dev\Github Repos\NetflixClone\.next\server\pages\browse.js'
+Require stack:
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\build\utils.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-middleware.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\router-server.js
+- E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1569:15)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:55:36
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1123:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1147:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1174:12)
+    at Module._load (node:internal/modules/cjs/loader:1346:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1679:12)
+    at mod.require (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:196:16)
+    at requirePage (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\require.js:109:84)
+    at E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:84
+    at async loadComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\next-server.js:710:36)
+    at async DevServer.findPageComponents (E:\Dev\Github Repos\NetflixClone\node_modules\next\dist\server\dev\next-dev-server.js:577:20) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\require.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\load-components.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\build\\utils.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-middleware.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\dev\\hot-reloader-webpack.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-utils\\setup-dev-bundler.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\router-server.js',
+    'E:\\Dev\\Github Repos\\NetflixClone\\node_modules\\next\\dist\\server\\lib\\start-server.js'
+  ],
+  page: '/browse'
+}

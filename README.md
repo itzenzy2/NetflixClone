@@ -1,13 +1,15 @@
-# Netflix Clone
+# BatFlix
 
-A high-fidelity Netflix clone built with Next.js, featuring movie/TV show browsing and video playback. This application uses The Movie Database (TMDb) API for content metadata and VidKing for video streaming.
+A modern streaming site built with Next.js, featuring movie/TV show browsing, search, and video playback. This application uses The Movie Database (TMDb) API for content metadata and VidKing for video streaming.
 
 ## 🎯 Features
 
-- **Browse Content**: Multiple carousels featuring trending, popular, top-rated content, and genre-specific rows
+- **Browse Content**: Carousels featuring trending, popular, top-rated content, and genre-specific rows
+- **Browse Page**: Filter by media type, genre, sort order, and streaming service (with region support)
 - **Hero Banner**: Dynamic featured content with play and info actions
-- **Search & Details**: Click any title to view detailed information including ratings, overview, and similar content
+- **Search & Details**: Click any title (or use the header search) to view detailed information including ratings, overview, similar content, and trailers
 - **Video Player**: Full-screen video playback using VidKing embedded player
+- **Continue Watching**: Titles you started are saved and resumable from the homepage
 - **My List**: Personal watchlist saved in browser localStorage (persists between sessions)
 - **TV Show Support**: Season and episode selector for TV series
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
@@ -35,7 +37,7 @@ A high-fidelity Netflix clone built with Next.js, featuring movie/TV show browsi
 
 \`\`\`bash
 git clone <your-repo-url>
-cd netflix-clone
+cd batflix
 \`\`\`
 
 ### 2. Install dependencies
@@ -74,13 +76,14 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 📁 Project Structure
 
 \`\`\`
-netflix-clone/
+batflix/
 ├── components/           # React components
 │   ├── Header.js        # Navigation bar
 │   ├── HeroBanner.js    # Featured content banner
 │   ├── MovieCard.js     # Content card component
 │   ├── CarouselRow.js   # Horizontal scrolling row
-│   └── ContentModal.js  # Details modal/page
+│   ├── ContentModal.js  # Details modal/page
+│   └── Footer.js        # Site footer
 ├── context/             # React Context providers
 │   └── MyListContext.js # Watchlist state management
 ├── lib/                 # Utility functions
@@ -89,6 +92,8 @@ netflix-clone/
 ├── pages/              # Next.js pages
 │   ├── _app.js         # App wrapper with providers
 │   ├── index.js        # Homepage
+│   ├── browse.js       # Discover by genre / streaming service
+│   ├── search.js       # Search page
 │   ├── my-list.js      # My List page
 │   └── watch/          # Video player pages
 │       └── [type]/
@@ -133,13 +138,13 @@ User Action → Context API → localStorage → UI Update
 
 ## 🎨 Customization
 
-### Changing Netflix Red Color
+### Changing BatFlix Red Color
 
 Edit \`tailwind.config.js\`:
 
 \`\`\`javascript
 colors: {
-  netflix: {
+  batflix: {
     red: '#E50914', // Change this value
     // ...
   }
@@ -271,3 +276,4 @@ This project is for educational purposes. Please respect TMDb's API terms of ser
 - [The Movie Database (TMDb)](https://www.themoviedb.org/) for the awesome API
 - [VidKing](https://www.vidking.net/) for video playback
 - Netflix for design inspiration
+- [JustWatch](https://www.justwatch.com/) for the streaming-provider filter concept

@@ -3,8 +3,98 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #3f3f46 #0b0b0c;
+    color-scheme: dark;
+    /* Keep horizontal scrolling confined to carousels */
+    overscroll-behavior-x: none;
+    /* Prevent iOS from auto-adjusting font sizes on rotation */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Fill the viewport on iOS (avoids white bars next to fixed elements) */
+    height: 100%;
+  }
+
   body {
-    @apply bg-netflix-black text-white;
+    @apply bg-batflix-black text-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* Remove the gray flash when tapping links/buttons on mobile */
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+  }
+
+  /* iOS zooms the page when a focused control's font-size is under 16px.
+     Force a readable size on all form controls for small screens. The
+     !important beats utility classes like text-sm so the zoom never triggers. */
+  @media (max-width: 767px) {
+    input,
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+
+  ::selection {
+    background: rgba(229, 9, 20, 0.45);
+    color: #fff;
+  }
+
+  /* Slim, theme-matched scrollbars (WebKit) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0b0b0e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 9999px;
+    border: 2px solid #0b0b0c;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+  }
+
+  /* Visible keyboard focus without double outlines on inputs */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.75);
+    outline-offset: 2px;
+  }
+
+  /* Form controls should be touch-friendly on mobile */
+  @media (max-width: 767px) {
+    button,
+    select {
+      touch-action: manipulation;
+    }
+  }
+}
+
+@layer utilities {
+  /* Respect iPhone notch / Dynamic Island and Android cutouts */
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left, 0px);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right, 0px);
   }
 }
 
@@ -17,5 +107,97 @@
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Simple brand spinner used by loading states */
+  .spinner {
+    @apply inline-block w-10 h-10 rounded-full border-2 border-white/20 border-t-batflix-red animate-spin;
+  }
+
+  /* Skeleton shimmer used by image placeholders */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #1e1e24;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+    animation: shimmer 1.6s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* ---- Motion layer ---- */
+
+  /* Page transition on route change (opacity only, so the fixed header stays put) */
+  .animate-page {
+    animation: pageIn 0.45s ease-out both;
+  }
+
+  /* Fade + rise entrance (transform only in the "from" frame so no
+     containing block lingers after the animation settles) */
+  .animate-fade-up {
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Simple fade */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out both;
+  }
+
+  /* Modal entrance: fade + rise + settle */
+  .animate-modal-in {
+    animation: modalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Hero backdrop slow zoom (Ken Burns) */
+  .animate-kenburns {
+    animation: kenburns 30s ease-in-out infinite alternate;
+  }
+
+  @keyframes pageIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.96); }
+    to { opacity: 1; }
+  }
+
+  @keyframes kenburns {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

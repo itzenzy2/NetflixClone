@@ -8,16 +8,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        netflix: {
+        batflix: {
           red: '#E50914',
-          black: '#141414',
-          darkGray: '#2F2F2F',
-          lightGray: '#B3B3B3',
+          black: '#0B0B0E',
+          darkGray: '#17171C',
+          lightGray: '#A3A3AD',
         }
       },
-      backgroundImage: {
-        'gradient-to-b': 'linear-gradient(to bottom, rgba(20,20,20,0) 0%, rgba(20,20,20,0.15) 15%, rgba(20,20,20,0.35) 29%, rgba(20,20,20,0.58) 44%, #141414 68%, #141414 100%)',
-      }
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      },
+      boxShadow: {
+        'soft': '0 8px 30px rgba(0, 0, 0, 0.35)',
+        'card': '0 4px 24px rgba(0, 0, 0, 0.5)',
+      },
     },
   },
   plugins: [],
